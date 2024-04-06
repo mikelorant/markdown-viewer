@@ -13,10 +13,14 @@ import (
 
 const (
 	content = "content.md"
+	index   = "assets/index.html"
 )
 
 func main() {
+	fs := http.FileServer(http.Dir("./assets"))
+
 	http.HandleFunc("/", root)
+	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
 	log.Println("Server started on :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
@@ -37,7 +41,7 @@ func root(w http.ResponseWriter, _ *http.Request) {
 		return
 	}
 
-	fmt.Fprint(w, html)
+	fmt.Fprint(w, template(html))
 }
 
 func convert(b []byte) (string, error) {
@@ -54,6 +58,15 @@ func convert(b []byte) (string, error) {
 	}
 
 	return buf.String(), nil
+}
+
+func template(html string) string {
+	t, err := read(index)
+	if err != nil {
+		return ""
+	}
+
+	return fmt.Sprintf(string(t), html)
 }
 
 func read(f string) ([]byte, error) {
