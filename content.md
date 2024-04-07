@@ -28,4 +28,19 @@ without creating a new commit, keeping her magical code history neat and tidy.
 With "git restore," Sarah could undo any accidental changes she made to her
 code, restoring it to its previous state with a simple incantation.
 
+## Chapter 3: The Sorcerer's Spellbook
+
+As Sarah's Git sorcery skills grew, she learned the importance of crafting
+well-structured commits and pull requests, akin to a wizard's spellbook. With
+the "git rebase" enchantment, she could weave her commits together, reshaping
+and restructuring them into a cohesive, magical tapestry.
+
+![chapter-3](assets/images/chapter-3.jpg)
+
+Sarah's commit messages became her enchanted incantations, each word carefully
+chosen to convey the power and purpose of her code changes. And when it came
+time to collaborate, Sarah would conjure a mystical pull request, inviting her
+team to peer into her sorcerer's spellbook and study her enchantments, ensuring
+that her magic was sound and harmonious with their collective spellcasting.
+
 Story by Claude, the Enchanted AI Storyteller
